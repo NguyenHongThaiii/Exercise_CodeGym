@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bàn cờ vua</title>
+    <style>
+        body{
+            background-color: #FFCC33;
+            font-size: 25px;
+        }
+        table{
+            width: 800px;
+            height: 800px;
+            background: red;
+            border: none;
+            border-collapse: collapse; 
+        }
+        td{
+            background-color: blanchedalmond;
+            border: none;
+        }
+        td:nth-child(Even){
+            background-color: white;
+        }
+        td:nth-child(Odd){
+            background-color: black;
+        }
+        .two td:nth-child(Even){
+            background-color: black;
+        }
+        .two td:nth-child(Odd){
+            background-color: white;
+        }
+        .four td:nth-child(Even){
+            background-color: black;
+        }
+        .four td:nth-child(Odd){
+            background-color: white;
+        }
+        .six td:nth-child(Even){
+            background-color: black;
+        }
+        .six td:nth-child(Odd){
+            background-color: white;
+        }
+        .eight td:nth-child(Even){
+            background-color: black;
+        }
+        .eight td:nth-child(Odd){
+            background-color: white;
+        }
+   .header{
+    padding-left: 80px;
+    padding-bottom: 50px;
+   }
+        .f-header{
+            margin-left: 0;
+            width: 100px;
+            text-align: center;
+            float: left;
+        }
+       .f-header::after{
+           clear: both;
+           display: table;
+           content: '';
+
+        }
+        .content{
+            float: left;
+            clear: both;
+            padding: 30px;
+        }
+        .f-content{
+            height: 100px;
+        }
+     
+        menu{
+            clear: both;
+        }
+        .banner{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="header">
+            
+            <div class="f-header">1</div>
+            <div class="f-header">2</div>
+            <div class="f-header">3</div>
+            <div class="f-header">4</div>
+            <div class="f-header">5</div>
+            <div class="f-header">6</div>
+            <div class="f-header">7</div>
+            <div class="f-header">8</div>
+        </div>
+        <div class="content">
+            <div class="f-content">A</div>
+            <div class="f-content">B</div>
+            <div class="f-content">C</div>
+            <div class="f-content">D</div>
+            <div class="f-content">E</div>
+            <div class="f-content">F</div>
+            <div class="f-content">G</div>
+            <div class="f-content">H</div>
+        </div>
+        <div class="menu">
+            <table>
+                <tr >
+                    <!-- <th>A</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="two">
+                    <!-- <th>B</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <!-- <th>C</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="four">
+                    <!-- <th>D</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <!-- <th>E</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="six">
+                    <!-- <th>F</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <!-- <th>G</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="eight">
+                    <!-- <th>H</th> -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tr>
+
+            </tr>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>
