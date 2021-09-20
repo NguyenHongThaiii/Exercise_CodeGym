@@ -1,62 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <p id="show"></p>
-    <input type="button" onclick="switch_turn()">
+    <input type="button" onclick="switch_turn()" />
     <script>
-        var count=0;
-        function ElectricLamp(status) {
-            this.status=status;
-            this.turnOn = function() {
-                count+=1;
-                if(this.status==true) {
-                    alert("Bật Đèn");
-                } else 
-                alert("Tắt Đèn");
-            }   
-            this.turnOff = function() {
-                count+=1;
-                if(this.status==false) {
-                    alert("Tắt Đèn");
-                } else
-                alert("Bật Đèn");
-            } 
+      var count = 0;
+      function ElectricLamp(status) {
+        this.status = status;
+        this.turnOn = function () {
+          count += 1;
+          if (this.status == true) {
+            alert("Bật Đèn");
+          } else alert("Tắt Đèn");
+        };
+        this.turnOff = function () {
+          count += 1;
+          if (this.status == false) {
+            alert("Tắt Đèn");
+          } else alert("Bật Đèn");
+        };
+      }
+      function SwitchButton(status, lapm) {
+        this.status = status;
+        this.lapm = lapm;
+        this.connectToLamp = function (elc) {
+          this.lapm == elc.status;
+        };
+        this.switchOn = function () {
+          count += 1;
+          alert("Bật Đèn");
+        };
+        this.switchOff = function () {
+          count += 1;
+          alert("Tắt Đèn");
+        };
+      }
+      var electric = new ElectricLamp(true);
+
+      var but = new SwitchButton(false, electric);
+      function switch_turn() {
+        if (count == 10) {
+          alert("lose battery");
+        } else if (count % 2 == 0) {
+          var s = electric.turnOn();
+          document.getElementById("show").innerHTML = s;
+        } else {
+          var c = but.switchOff();
+          document.getElementById("show").innerHTML = c;
         }
-        function SwitchButton(status,lapm) {
-            this.status=status;
-            this.lapm=lapm;
-            this.connectToLamp = function(elc){
-                this.lapm==elc.status;
-            }
-            this.switchOn = function() {
-                count+=1;                
-                    alert("Bật Đèn");
-            }
-            this.switchOff = function() {
-                count+=1;
-                alert("Tắt Đèn");
-            }
-        }
-       var electric = new ElectricLamp(true);
-       
-       var but = new SwitchButton(false,electric);
-       function switch_turn() {
-           if(count==10) {
-               alert("lose battery");
-           }else if(count%2==0) {
-               var s= electric.turnOn();
-               document.getElementById("show").innerHTML=s;
-           } else {
-               var c = but.switchOff();
-               document.getElementById("show").innerHTML=c;
-           }
-       }
+      }
     </script>
-</body>
+  </body>
 </html>
