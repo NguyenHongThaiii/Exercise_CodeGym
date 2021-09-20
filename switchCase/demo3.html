@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tính điển ĐH khối D</h2>
+    <form>
+    <label for="Toán">Toán</label>
+    <input id="math" type="number"> <br> <br>
+    <label for="Văn">Văn</label>
+    <input id="van" type="number"> <br> <br>
+    <label for="Anh">Anh</label>
+    <input id="english" type="number"> <br> <br>
+    <label for="Khu vực">Khu vực</label>
+    <select id="kv">
+        <option value="Kv1">Kv1</option>
+        <option value="Kv2-NT">Kv2-NT</option>
+        <option value="Kv2">Kv2</option>
+        <option value="Kv3">Kv3</option>
+    </select> <br> <br>
+    <button type="button" onclick="grade()">Tính điểm</button> <br>
+</form>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+   
+   
+    function grade(){
+        let math = parseInt(document.getElementById("math").value);
+        let van = parseInt(document.getElementById("van").value);
+        let eng = parseInt(document.getElementById("english").value);
+        let area = document.getElementById("kv");
+    switch (area.value) {
+        case "Kv1":
+            area=0.75;
+            break;
+        case "Kv2-NT":
+            area=0.5;
+            break;
+        case "Kv2":
+            area=0.25;
+            break;
+        case "Kv3":
+            area=0;
+            break;
+    }
+    let res =math+van+eng+area;
+                    document.getElementById("result").innerHTML=res;
+    
+                    }
+    
+    
+</script>

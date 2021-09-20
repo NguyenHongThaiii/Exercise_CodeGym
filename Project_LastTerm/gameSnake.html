@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="gameSankeTwo.css">
+
+<body>
+
+</body>
+
+</html>
+<script>
+  var canvas = document.createElement('canvas');
+  var context = canvas.getContext("2d");
+  // var context2= canvas.getContext("2d");
+  canvas.width = 400;
+  canvas.height = 400;
+  document.body.appendChild(canvas);
+  class Snake {
+    constructor() {
+      this.x = 0;
+      this.y = 0;
+      this.grid = 20;
+      this.dx = this.grid;
+      this.dy = 0;
+      this.cell = [];
+      this.maxCell = 2;
+      this.loop();
+
+    }
+    loop() {
+      this.update();
+      this.draw();
+      setTimeout(() => this.loop(), 60);
+    }
+    draw() {
+      context.clearRect(0, 0, 400, 400);
+      for (let i = 0; i < this.cell.length; i++) {
+        context.beginPath();
+        context.fillStyle = 'green';
+        context.fillRect(this.cell[i].x, this.cell[i].y, this.grid, this.grid);
+      }
+      if (this.endGame() == false) {
+        context.font = '50px Arial';
+        context.fillStyle = 'white';
+        context.fillText("You lose", 100, 200);
+      }
+    }
+    update() {
+      if (this.endGame()) {
+        this.x += this.dx;
+        this.y += this.dy;
+      }
+
+      this.cell.unshift({ x: this.x, y: this.y });
+
+      if (this.cell.length > this.maxCell) {
+        this.cell.pop();
+      }
+
+      if (this.x < 0) {
+        this.x = 400;
+      }
+      if (this.x > 400) {
+        this.x = 0;
+      }
+      if (this.y < 0) {
+        this.y = 400;
+      }
+      if (this.y > 400) {
+        this.y = 0;
+      }
+      this.catchEventKet();
+
+    }
+    catchEventKet() {
+      document.addEventListener('keydown', (e) => {
+        if (e.which == 37 && this.dx == 0) {
+          this.dx = -this.grid;
+          this.dy = 0;
+        }
+        else if (e.which == 38 && this.dy == 0) {
+          this.dx = 0;
+          this.dy = -this.grid;
+        } else if (e.which == 39 && this.dx == 0) {
+          this.dx = this.grid;
+          this.dy = 0;
+        } else if (e.which == 40 && this.dy == 0) {
+          this.dx = 0;
+          this.dy = this.grid;
+        }
+      });
+    }
+    endGame() {
+      for (let i = 1; i < this.cell.length; i++) {
+        if (this.x == this.cell[i].x && this.y == this.cell[i].y) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+  }
+  class Apple {
+    constructor() {
+      this.x = 0;
+      this.y = 0;
+      this.grid = 20;
+      this.update();
+      this.draw();
+      this.loop();
+    }
+    loop() {
+      if (this.x == snake.x && this.y == snake.y) {
+        this.update();
+        this.draw();
+        snake.maxCell++;
+      }
+      this.draw();
+      setTimeout(() => this.loop(), 60);
+    }
+
+    update() {
+
+      this.x = 20 * (Math.floor(Math.random() * 19) + 0);
+      this.y = 20 * (Math.floor(Math.random() * 19) + 0);
+    }
+    draw() {
+      context.clearRect(this.x, this.y, this.grid, this.grid);
+      context.beginPath();
+      context.fillStyle = 'red';
+      context.fillRect(this.x, this.y, this.grid, this.grid);
+    }
+  }
+  var snake = new Snake();
+  var apple = new Apple();
+
+
+</script>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function Product(name, price, description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+    let arr = [];
+    arr.push(new Product("Iphone", "6000000Đ", "IPhone8"));
+    arr.push(new Product("Iphone", "6000000Đ", "IPhone8"));
+    arr.push(new Product("Iphone", "6000000Đ", "IPhone8"));
+    function displayArr() {
+        document.body.innerHTML = "";
+        let res = '';
+        res += "<table border='1'>"
+        for (i = 0; i < arr.length; i++) {
+            res += "<tr>";
+            res += "<td>" + arr[i].name + "</td>";
+            res += "<td>" + arr[i].price + "</td>";
+            res += "<td>" + arr[i].description + "</td>";
+            res += "<td><button onclick='editProduct(" + i + ")'>Chỉnh Sửa</button></td>";
+            res += "<td><button onclick ='deleteProduct(" + i + ")'>Xóa</button>";
+            res += "</tr>";
+        }
+        res += "</table>";
+        res += "<button onclick ='creProduct()'>Tạo Sản Phẩm </button>"
+        res += "<button onclick ='findByName()'>Tìm Sản Phẩm </button>"
+        document.write(res);
+    }
+    function creProduct() {
+        document.body.innerHTML = "";
+        let res = "Name: <input id='name' type='text'> <br/>";
+        res += "Price: <input id='price' type='text'> <br/>";
+        res += "Description: <input id='des' type='text'> <br/>";
+        res += "<button onclick='create()'>Tạo</button>";
+        document.write(res);
+    }
+    function create() {
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        let des = document.getElementById("des").value;
+        arr.push(new Product(name, price, des));
+        displayArr();
+    }
+    function editProduct(index) {
+        document.body.innerHTML = "";
+        let res = "Name: <input id='name' type='text'> <br/>";
+        res += "Price: <input id='price' type='text'> <br/>";
+        res += "Description: <input id='des' type='text'> <br/>";
+        res += "<button onclick='edit(" + index + ")'>Tạo </button>";
+        document.write(res);
+    }
+    function edit(index) {
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        let des = document.getElementById("des").value;
+        arr[index] = new Product(name, price, des);
+        displayArr();
+    }
+    function deleteProduct(index) {
+        if (confirm("You want to delete this line?")) {
+            arr.splice(index, 1);
+            displayArr();
+        }
+    }
+    function findByName() {
+        document.body.innerHTML = ''
+        let res = "Name: <input id='name' type='text'> <br/>";
+        res += "<button onclick='find()'>Tìm </button>";
+        res += "<button onclick='home()'>Home </button>";
+
+        document.write(res)
+    }
+    function find() {
+        let name = document.getElementById("name").value;
+        // console.log(name)
+        let res = '<table id="table">'
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].name == name) {
+                res += "<tr>";
+                res += "<td>" + arr[i].name + "</td>";
+                res += "<td>" + arr[i].price + "</td>";
+                res += "<td>" + arr[i].description + "</td>";
+                res += "<td><button onclick='editProduct(" + i + ")'>Chỉnh Sửa</button></td>";
+                res += "<td><button onclick ='deleteProduct(" + i + ")'>Xóa</button>";
+                res += "</tr>";
+            }
+
+        }
+        res += "</table>";
+        res += "<button onclick ='creProduct()'>Tạo Sản Phẩm </button>"
+        res += "<button onclick='find()'>Tìm </button>";
+        res += "<button onclick='home()'>Home </button>";
+        document.body.innerHTML="";
+        document.write(res);
+    }
+    function home() {
+        displayArr()
+    }
+    displayArr();
+</script>

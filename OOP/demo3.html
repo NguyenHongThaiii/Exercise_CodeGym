@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="rectangle" width="200px" height="100px" style="border: 1px soild black;"></canvas>
+    <script>
+        class Rectangle {
+            constructor(width,height){
+                this.height=height;
+                this.width=width;
+            }
+            setArea() {
+                return this.height*this.width;
+            }
+            setPerimeter() {
+                return (this.width+this.height)*2;
+            }   
+        };
+
+        function creRectangle() {
+            var x = document.getElementById("rectangle").getContext('2d');
+            var hcn = new Rectangle(100,50);
+            x.fillRect(10,20,hcn.width,hcn.height);
+           
+        }
+        creRectangle();
+    </script>
+</body>
+</html>

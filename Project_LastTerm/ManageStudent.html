@@ -1,0 +1,138 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="content">
+
+</div>    
+</body>
+</html>
+<script>
+// Object Constructor
+function Student(name, id, age, gender){
+    this.name=name;
+    this.id=id;
+    this.age=age;
+    this.gender=gender;
+}
+// array
+    var students= []
+    var renderContent = document.querySelector('.content')
+    students.push(new Student("Nguyễn Hồng Thái",1,20,"Nam"))
+// function
+function renderStudents(){
+    // document.body.innerHTML=''
+    var res = '<table>'
+    for(let i=0;i<students.length;i++){
+        res +=`
+                <tr>
+                    <td>${students[i].name}</td> 
+                    <td>${students[i].id}</td> 
+                    <td>${students[i].age}</td> 
+                    <td>${students[i].gender}</td> 
+                    <td><button onclick="delStudent(${i})">Xóa</button></td>                    
+                    <td><button onclick="editStudent(${i})">Edit</button></td>                    
+                <tr>
+        `
+    }
+    res+='</table>'
+    res+='<button onclick="addStudent()">Thêm sinh viên</button>'
+    res+='<button onclick="findStudentById()">Tìm sinh viên</button>'
+    renderContent.innerHTML= res
+}
+function addStudent(){
+    var res=
+    `
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <label for="mssv">Id:</label>
+    <input type="text" id="mssv">
+    <label for="age">Age:</label>
+    <input type="text" id="age">
+    <label for="gender">Gender:</label>
+    <input type="text" id="gender">
+    <button onclick='createStudent()'>Tạo</button>
+    `
+    renderContent.innerHTML = res
+}
+function createStudent(){
+    var name = document.querySelector('#name').value
+    var mssv = document.querySelector('#mssv').value
+    var age = document.querySelector('#age').value
+    var gender = document.querySelector('#gender').value
+    students.push(new Student(name,mssv,age,gender))
+    renderStudents();
+}
+function delStudent(index){
+    if(confirm(`Bạn có chắc muốn xóa${index+1} này không?`)){
+        students.pop(index)
+    }
+    renderStudents();
+}
+function editStudent(index){
+    var res=
+    `
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <label for="mssv">Id:</label>
+    <input type="text" id="mssv">
+    <label for="age">Age:</label>
+    <input type="text" id="age">
+    <label for="gender">Gender:</label>
+    <input type="text" id="gender">
+    <button onclick='create(${index})'>Tạo</button>
+    `
+    renderContent.innerHTML= res
+}
+function create(index){
+    var name = document.querySelector('#name').value
+    var mssv = document.querySelector('#mssv').value
+    var age = document.querySelector('#age').value
+    var gender = document.querySelector('#gender').value
+    students[index] = new Student(name,mssv,age,gender)
+    renderStudents()
+}
+function findStudentById(){
+    res= 
+    `
+    <label for="mssv">Id:</label>
+    <input type="text" id="mssv">
+    <button onclick='find()'>Tìm</button>
+    `
+    renderContent.innerHTML=res
+}
+function find(){
+    var mssv = document.querySelector('#mssv').value
+    var res = '<table>'
+    for(let i=0;i<students.length;i++){
+        if(students[i].id == mssv){
+            res = 
+            `
+                <tr>
+                    <td>${students[i].name}</td> 
+                    <td>${students[i].id}</td> 
+                    <td>${students[i].age}</td> 
+                    <td>${students[i].gender}</td>
+                </tr>
+            `
+        }
+    }
+    res+='</table> </br>'
+    res+= 
+    `
+    <label for="mssv">Id:</label>
+    <input type="text" id="mssv">
+    <button onclick='find()'>Tìm</button>
+    <button onclick='home()'>Trang chủ</button>
+    `
+    renderContent.innerHTML = res
+}
+function home(){
+    renderStudents()
+}
+renderStudents();
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Game Caro Simple</p>
+    <p id="value"></p>
+    <br>
+    <input type="button" value="Change Value" onclick="play();">
+    <script>
+        let board = [];
+        let data = "";
+        for (let i = 0; i < 5; i++) {
+            board[i] = new Array(0, 0, 0, 0, 0);
+        }
+
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j]+"  " ;
+            }
+        }
+        document.getElementById("value").innerHTML = data;
+
+        function play() {
+            do {
+                var row = prompt("Mời bạn nhập vị trí hàng cần đánh: ");
+            }while (row<0 || row>5);
+            do {
+                var place = prompt("Mời bạn nhập vị trí của hàng đó: ");
+            }while (place<0 || place>5);
+
+            if (board[row-1][place-1] == 'x'){
+                alert("Vị trí trùng! Mời bạn nhập lại");
+                do {
+                    var row = prompt("Mời bạn nhập vị trí hàng cần đánh: ");
+                }while (row<0 || row>5);
+                do {
+                    var place = prompt("Mời bạn nhập vị trí của hàng đó: ");
+                }while (place<0 || place>5);
+            }
+            board[row-1][place-1] = 'x';
+            var data = "";
+
+            for (let i = 0; i < 5; i++) {
+                data += "<br/>";
+                for (let j = 0; j < 5; j++) {
+                    data += board[i][j] + "&nbsp;&nbsp;";
+                }
+            }
+            document.getElementById("value").innerHTML = "";
+            document.getElementById("value").innerHTML = data;
+        }
+
+    </script>
+</body>
+</html>

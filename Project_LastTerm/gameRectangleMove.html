@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gameRectangleMove.css">
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    debugger
+var canvas = document.createElement('canvas');
+canvas.width=400;
+canvas.height=600;
+document.body.appendChild(canvas);
+var context= canvas.getContext("2d");
+var localY=1;
+    class Rectangle{
+        constructor() {
+            this.x=0;
+            this.y=0;
+            this.width=100;
+            this.height=100;
+            this.grid=10;
+            this.dx=0;
+            this.loop();
+        }
+        loop() {
+            this.update();
+            this.draw();
+            setTimeout(()=>this.loop(),10);
+        }
+        update() {
+            context.clearRect(this.x,this.y,this.width,this.height);
+            if(this.y<0||(this.y+this.height)>canvas.height){
+                this.grid=-this.grid;
+            }
+            this.y+=this.grid;
+            this.x+=this.dx;
+        }
+        draw() {
+           
+            context.fillStyle='green';
+            context.fillRect(this.x,this.y,this.width,this.height);
+        }
+      
+    }
+    var rect= new Rectangle();
+
+
+
+    // class Rectangle{
+    //     constructor(x,y,width,height){
+    //         this.x=x;
+    //         this.y=y;
+    //         this.width=width;
+    //         this.height=height;
+    //         this.update();
+    //     }
+    //     update() {
+    //         context.clearRect(this.x,this.y,this.width,this.height);
+    //         if(this.y<10||(this.y+this.width)>500){
+    //             localY=-localY;
+    //         }
+    //         this.y+=localY;
+    //         this.draw();
+    //         setInterval(()=>this.update,10);
+    //     }
+    //     draw() {
+            
+    //         context.fillStyle='red';
+    //         context.fillRect(this.x,this.y,this.width,this.height);
+    //     }
+    // }
+
+    // var rect = new Rectangle(0,0,100,100);
+    
+    // class Rectangle {
+    //     constructor(x,y,width,height) {
+    //         this.x=x;
+    //         this.y=y;
+    //         this.width=width;
+    //         this.height=height;
+    //         this.canvas = null;
+    //         this.context=null;
+    //         this.init();
+    //         this.update();
+    //     }
+    //     init() {
+    //         this.canvas = document.createElement('canvas');
+    //         this.canvas.width=400;
+    //         this.canvas.height=400;
+    //         this.context=this.canvas.getContext("2d");
+    //         document.body.appendChild(this.canvas);
+    //     }
+    //     update() {
+    //         this.context.clearRect(this.x,this.y,this.width,this.height);
+    //         if(this.y<10||(this.y+this.width)>300){
+    //             localY=-localY;
+    //         }
+    //         this.y+=localY;
+    //         this.draw();
+    //         setTimeout(()=>this.update,10);
+    //     }
+    //     draw() {
+    //         this.context.beginPath();
+    //         this.context.fillStyle='yellow';
+    //         this.context.fillRect(this.x,this.y,this.width,this.height);
+    //     }
+    // }
+
+</script>

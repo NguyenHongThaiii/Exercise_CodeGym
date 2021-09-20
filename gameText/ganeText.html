@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="file">
+        <textarea name="txt" cols="40" rows="10" onkeydown="clickKey()"></textarea>
+    </form>
+</body>
+</html>
+<script>
+    var a = new Array();
+    var n="";
+    a[1]='T';a[2]='Ô';a[3]='I';a[4]=' ';a[5]='L';a[6]='À';a[7]=' ';a[8]='M';
+    a[9]='Ộ';a[10]='T';a[11]=' ';a[12]='Đ';a[13]='Ứ';a[14]='A';a[15]=' ';
+    a[16]='N';a[17]='G';a[18]='Ố';a[19]='C';a[20]='!';a[21]='!';a[22]='!';
+ 
+ function clickKey() {
+      text = document.file.txt.value;
+     len = text.length;
+     if(len>0) {
+         for(let i=1;i<=len;i++) {
+            n+= a[i];
+         } if(len==22) {
+            document.file.txt.value="";
+             n="";
+         }
+     } 
+         document.file.txt.value=n;
+     n="";
+setTimeout("clickKey()",1);
+}
+</script>

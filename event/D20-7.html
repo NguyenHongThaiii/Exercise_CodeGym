@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 190px; height: 190px; border: 1px solid black; position: relative;" id="battelField">
+<img src="tank.png" style="top: 19px; left: 38px; width: 19px; height: 19px; position: absolute;" id="tank" alt="xetang">
+<img src="boom.png" style="top: 76px; left: 133px;width: 19px; height: 19px; position: absolute;" id="boom" alt="bomp">
+    </div>
+       <table>
+           <form>
+        <tr>
+            <td></td>
+            <td> <button type="button" onclick="onmousetop()">⬆</button></td>
+        </tr>
+        <tr>
+            <td> <button type="button" onclick="onmouseleft()">⬅</button></td>
+            <td></td>
+            <td> <button type="button" onclick="onmouseright()">➡</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <button type="button" onclick="onmousereturn()">⬇</button></td>
+        </tr>
+           </form>
+       </table>
+        
+</body>
+</html>
+<script>
+   
+    function onmousetop() {
+        console.log(parseInt(document.getElementById("tank").style["top"]) + 19 + "px");
+        document.getElementById("tank").style["top"] =  parseInt(document.getElementById("tank").style["top"]) - 19 + "px";
+        console.log(document.getElementById("tank").style["top"]);
+explosion();
+    }
+    function onmousereturn() {
+        document.getElementById("tank").style["top"] =  parseInt(document.getElementById("tank").style["top"]) + 19 + "px";
+        explosion();
+    }
+    function onmouseleft() {
+        document.getElementById("tank").style["left"] =  parseInt(document.getElementById("tank").style["left"]) - 19 + "px";
+        explosion();
+    }
+    function onmouseright() {
+        document.getElementById("tank").style["left"] =  parseInt(document.getElementById("tank").style["left"]) + 19 + "px";
+        explosion();
+    }
+    function explosion(){
+        let x1 =parseInt(document.getElementById("tank").style["top"]);
+    let x2 =parseInt(document.getElementById("boom").style["top"]);
+    let y1 =parseInt(document.getElementById("tank").style["left"]);
+    let y2 =parseInt(document.getElementById("boom").style["left"]);
+    if(x1==x2&&y1==y2) {
+        randomBoom();
+        
+    }
+}
+         function randomBoom() {
+            document.getElementById("boom").style["left"]=(19*Math.floor((Math.random() * 6)+1) +"px");
+            document.getElementById("boom").style["top"]=(19*Math.floor((Math.random() * 6)+1) +"px");
+  
+            
+            }
+
+        
+    
+
+
+     
+
+      
+    
+
+</script>

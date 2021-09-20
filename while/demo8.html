@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="play()">Chơi</button>
+</body>
+</html>
+<script>
+    
+    
+     
+    function play() {
+        let i=0;
+        let num = parseInt(prompt("enter your number"));
+        
+        let rd=Math.round((Math.random(0,num)));
+        let num1 =parseInt(prompt("enter your number"));
+        for(i;i<3;i++) {
+            if(rd==num1) {
+                console.log("Congratulation");
+                break;
+            }
+            if(rd>num1 || rd<num1) {
+                 num1 = prompt("enter your number");
+                 console.log("Mời bạn nhập lại");
+                 
+            }
+        }
+        
+    }
+</script>

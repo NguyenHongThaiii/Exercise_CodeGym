@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="change">
+        <table>
+            <tr>
+                <th><label for="Amount">Amount</label></th>
+                <th><label for="">From Current</label></th>
+                <th><label for="">To Currency</label></th>
+            </tr>
+            <tr>
+                <td><input type="number" id="Amount"></td>
+                <td>
+                    <select id="name">
+                        <option value="USD"> USD</option>
+                        <option value="VNĐ">VNĐ </option>
+                    </select>
+                </td>
+                <td>
+                    <select id="name2">
+                        <option value="USD"> USD</option>
+                        <option value="VNĐ">VNĐ </option>
+                    </select>
+                </td>
+                <td><input type="button" onclick="changeMoney()" value="Convert"> </td>
+            </tr>
+        </table>
+    </form>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+
+function changeMoney() {
+let value1 = +document.getElementById("Amount").value;
+let value2 = document.getElementById("name").value;
+let value3 = document.getElementById("name2").value;
+let res;
+    if(value2=="USD"&&value3=="VNĐ"){
+            res = value1*23000+"VNĐ";
+    }
+     else if(value2=="VNĐ"&&value3=="USD") {
+            res = value1/23000+" USD";
+    } else {
+        alert("choose option again");
+    } 
+   document.getElementById("result").innerHTML=res;
+}
+
+</script>

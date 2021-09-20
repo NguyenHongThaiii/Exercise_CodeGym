@@ -1,0 +1,15 @@
+#A{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    width: 100%;
+}
+h1{
+    text-align: center;
+}#A tr:nth-child(odd){
+    border: 1px solid black;
+}
+#A tr:nth-child(even){
+    border: 1px solid black;
+}

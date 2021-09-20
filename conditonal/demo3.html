@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Nhập số</p>
+    <input id="number" type="number">
+    <button type="button" value="Kiểm tra" onclick="check()">Kiểm tra</button>
+</body>
+</html>
+<script>
+    function check() {
+        let x = document.getElementById("number").value;
+        let result = ((x%2==0)?"Chẵn":"Lẻ");
+        alert(result);
+    }
+</script>

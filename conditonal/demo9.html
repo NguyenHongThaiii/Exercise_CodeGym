@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <input id="toan_hang_1" type="number"/>
+    <input id="toan_hang_2" type="number"/>
+    <br/>
+    <button onclick="cong()">Addtion (+)</button>
+    <button onclick="tru()">Subtraction (-)</button>
+
+    <p id="ket_qua">Result Division: 1</p>
+
+    <script>
+
+        let input1 = document.getElementById("toan_hang_1");
+        let input2 = document.getElementById("toan_hang_2");
+        let p = document.getElementById("ket_qua");
+
+        function cong() {
+            let number_1 = +input1.value;
+            let number_2 = +input2.value;
+            let result = number_1 + number_2;
+            p.innerHTML = "Result Division: " + result;
+        }
+
+        function tru() {
+            let number_1 = +input1.value;
+            let number_2 = +input2.value;
+            let result = number_1 - number_2;
+            p.innerHTML = "Result Division: " + result;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let i,j;
+        let height = prompt("enter");
+        let width = prompt("enter");
+        document.write('<table>');
+        for(i=0;i<=height;i++) {
+            document.write('<tr>');
+            for(j=0;j<=width;j++) {
+                if(i==0||j==0||i==height||j==width) {
+                    document.write('<td>'+"*"+'</td>');
+        }
+        else document.write('<td>'+"*"+'</td>');
+    }
+    document.write('</tr>');
+}
+        document.writeln('<table/>');
+    
+    </script>
+</body>
+</html>

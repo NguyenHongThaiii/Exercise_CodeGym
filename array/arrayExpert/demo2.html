@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myColore = ["Green","Red","White","Black"];
+        var m = myColore.toString();
+        document.write(m);
+        document.write("<hr/>");
+    </script>
+    <script>
+        var res="";
+        var n = prompt("enter your number element");
+        var arr = []; 
+        for(var i=0;i<n;i++) {
+            arr[i] = prompt("enter your element");
+        }
+        for(i=0;i<arr.length;i++) {
+            if(arr[i]%2==0&&arr[i+1]%2==0){
+                res+=arr[i]+"-";
+            }  else 
+            res+=arr[i];    
+        }
+        document.write(res);
+        document.write("<hr/>");
+    </script>
+    <script>
+        var result ="";
+        var text = "The Last Name";
+        for(i of text){
+            if(i.toLowerCase()) {
+                result+=i.toLowerCase();
+            } else result+=i;
+        }
+        document.write(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Meter</td>
+            <td>Foot</td>
+        </tr>
+        <tr>
+            <td><input type="number" id="demo" oninput="changeMeter_Foot(this.value,demo1.value)"></td>
+            <td><input type="number" id="demo1" oninput="changFoot_Meter(this.value,demo.value)"></td>
+        </tr>       
+        <tr>
+            <p id="res"></p>
+            <p></p>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    function changeMeter_Foot(temp,val) {
+        val=temp*3.279;
+        document.querySelector("#demo1").value=val;
+    }
+    function changFoot_Meter(temp,val) {
+        val= temp*0.305;
+        document.querySelector("#demo").value=val;
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let height = prompt("enter");
+        let weight= prompt("enter");
+        let bim = (weight)/(height*height);
+        if(bim<16)
+        alert("Gầy độ III");
+        else if(bim<17)
+        alert("Gầy độ II");
+        else if(bim<18.5)
+        alert("Gầy độ I");
+        else if(bim<25)
+        alert("Bình thường");
+        else if(bim<30)
+        alert("Thừa cân");
+        else if(bim<35)
+        alert("Béo phì độ I");
+        else if(bim<40)
+        alert("Béo phì độ II");
+        else if(bim>40)
+        alert("Béo phì độ III");
+    </script>
+</body>
+</html>

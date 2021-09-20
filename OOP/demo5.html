@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Employee {
+            constructor(id,firstName,lastname,salary) {
+                this.id=id;
+                this.firstName=firstName;
+                this.lastname=lastname;
+                this.salary=salary;
+            }
+            getID() {
+                return this.id;
+            }
+            getFirstName() {
+                return this.firstName;
+            }
+            getLastName() {
+                return this.lastname;
+            }
+            getSalary() {
+                return this.salary;
+            }
+            getAnnualSalary(salary) {
+                return salary*12;
+            }
+            raiseSalary() {
+                return this.salary+this.salary*0.2;
+            }
+        }
+        var emp = new Employee(20130401,"Phạm Bình","An",10000000);
+        console.log(emp.getFirstName()+" "+emp.getLastName());
+        console.log(emp.getSalary());
+        console.log(emp.getAnnualSalary(emp.getSalary()));
+        var raise = emp.raiseSalary();
+        console.log(raise);
+        console.log(emp.getAnnualSalary(raise));
+
+    </script>
+</body>
+</html>

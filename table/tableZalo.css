@@ -1,0 +1,14 @@
+#tkb{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+#tkb th{
+border: 1px solid black;
+}
+#tkb td{
+    border: 1px solid black;
+    }
+    table{
+        margin: auto;
+    }

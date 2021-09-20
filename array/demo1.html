@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sample Screen:</h2>
+    <input type="text" id="textValue">
+    <input type="button" id="btAdd" value="Add" onclick="add()">
+    <input type="button" id="btDisplay" value="Display" onclick="display()">
+    <!-- <input type="button" id="btDelete" value="Delete" onclick="del()"> -->
+
+    <hr/>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+    let x =0;
+        let arr =[];
+    function add() {
+        arr [x] = document.getElementById("textValue").value;
+        x++;
+        document.getElementById("textValue").value="";
+
+    }
+    function display(){
+        let e = [arr.length];
+        for(let i=0;i<arr.length;i++) {
+            e[i] = "Element "+i+" of"+" array = "+arr[i]+"<br/>";
+            document.getElementById("result").innerHTML=e;    
+        }
+        
+    }
+    // function del() {
+    //     document.getElementById("result").innerHTML=" ";
+    // }
+</script>

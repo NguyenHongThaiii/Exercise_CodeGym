@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="dom.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Caculator</h2>
+    <form>
+        <input id="dom1" type="number">
+        <input id="dom2" type="number"> <br>
+        <button type="button" onclick="add()" >Aditition(+)</button>
+        <button type="button" onclick="sub()" >Subtraction(-)</button>
+        <button type="button" onclick="multip()" >Multiplication(x)</button>
+        <button type="button" onclick="div()" >Division(/)</button>
+        <button type="reset">Nhập lại</button>
+       
+    </form>
+    <div id="result"></div>
+</body>
+</html>
+<script>
+          function add() {
+                   let input1 = document.getElementById("dom1").value;
+                   let input2 = document.getElementById("dom2").value;
+                   let dom1 = Number(input1);
+                   let dom2 = Number(input2);
+                  let result =0;
+                  result=(dom1+dom2);
+                  document.getElementById("result").innerHTML="Result Add:"+result;
+                }
+                function sub() {
+                   let input1 = document.getElementById("dom1").value;
+                   let input2 = document.getElementById("dom2").value;
+                   let dom1 = Number(input1);
+                   let dom2 = Number(input2);
+                  let result =0;
+                  result=(dom1-dom2);
+                  document.getElementById("result").innerHTML="Result Sub:"+result;
+                }
+                function multip() {
+                   let input1 = document.getElementById("dom1").value;
+                   let input2 = document.getElementById("dom2").value;
+                   let dom1 = Number(input1);
+                   let dom2 = Number(input2);
+                  let result =0;
+                  result=(dom1*dom2);
+                  document.getElementById("result").innerHTML="Result Multip:"+result;
+                }
+                function div() {
+                   let input1 = document.getElementById("dom1").value;
+                   let input2 = document.getElementById("dom2").value;
+                   let dom1 = Number(input1);
+                   let dom2 = Number(input2);
+                  let result =0;
+                  result=(dom1/dom2);
+                  document.getElementById("result").innerHTML="Result Div:"+result;
+                }
+        </script>

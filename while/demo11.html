@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let height = parseInt(prompt("enter height"));
+        var a=0;
+        var total =0;
+        var x=0;
+        var y=1;
+        let x,output;
+        document.write('<table>');
+        for(var i=1;i<=height;i++) {
+            document.write('<tr>');
+            for(var j=1;j<=2*height;j++) {    
+                x = j-height;
+                if(x<0){ 
+                    x*=-1;
+                    }
+                output = i-x;
+                if(output>0) {
+                    while(a<3){
+                    if(a==0||a==1) {
+                document.write('<td>'+a+'</td>');
+            } else {
+            total = x+y;
+            x=y;
+            y=total;
+            document.write('<td>'+total+'</td>');
+            a++;
+            }
+        }
+                } else document.write('<td>'+  +'</td>');
+
+            }
+            document.write('</tr>');
+            
+        }
+document.write('</table>');
+ 
+    </script>
+</body>
+</html>

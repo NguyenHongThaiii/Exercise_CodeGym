@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPailindrome(s) {
+            let last = s.length - 1;
+            let first = 0;
+            let count = 0;
+            // while(first>last) {
+            //     if(s.charAt(first)==s.charAt(last)){
+            //         count++;
+            //     } else { 
+            //         return "Chuỗi không đối xứng";
+            //     }
+            //     if(count==(s.length/2)){
+            //         return "Chuỗi có đối xứng";
+            //     }
+            //     first++;
+            //     last--;
+            // }
+            for (let i = 0; last > i, i < (s.length / 2); i++, last--) {
+                if (s.charAt(i) == s.charAt(last)) {
+                    count++;
+                } else {
+                    return "chuỗi không đối xứng";
+                }
+            }
+            if (count == (s.length / 2)) {
+                return "chuỗi có đối xứng";
+            }
+        }
+        let s = "thuuht";
+        document.write(isPailindrome(s));
+    </script>
+</body>
+
+</html>

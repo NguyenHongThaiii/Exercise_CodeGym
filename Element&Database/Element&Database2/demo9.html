@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkArr_Char(arr,c) {
+            count =0;
+            for(let i=0;i<arr.length;i++) {
+                if(arr[i]==c) {
+                    count++;
+                }
+            } if(count==0) {
+                return-1;
+            }
+            return count;
+        }
+        let arr = ['t','h','a','i','b','e','o'];
+        let c ='u';
+        console.log(checkArr_Char(arr,c));
+    </script>
+</body>
+</html>

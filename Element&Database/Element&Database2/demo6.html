@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function checkNumber(n) {
+        //     if(n==0) {
+        //         while(n!=0) {
+        //             let n= parseInt(prompt("enter"));
+        //         }
+        //     } if(n-1<0) {
+        //         return false;
+        //     } else return true;
+        // }
+        // let n = parseInt(prompt("enter"));
+        // alert(checkNumber(n));
+        function check(n) {
+            let count=0;
+            while(count<5) {
+                if(n=='0') {
+                    alert("Moi ban nhap lai");
+                    let n = prompt("enter");
+                    count++;
+            }  if(n.charAt(0)=='-') {
+                 return false;
+                 break;
+            } else if(n.charAt(0)=='+')  {
+                 return true;
+                 break;
+            }
+            }
+        }
+        let n = prompt("enter");
+        alert(check(n));
+    </script>
+</body>
+</html>

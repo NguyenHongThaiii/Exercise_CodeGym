@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div style="border: 1px solid black; height: 190px; width: 190px; background-color: rosybrown;">
+            <img id="tank" src="tank.png" style="position: relative; top: 0px; left: 10px; "
+            width="19"
+            height="19">
+        </div>
+       <table>
+           <form>
+        <tr>
+            <td></td>
+            <td> <button type="button" onclick="onmousetop()"></button></td>
+        </tr>
+        <tr>
+            <td> <button type="button" onclick="onmouseleft()"></button></td>
+            <td></td>
+            <td> <button type="button" onclick="onmouseright()"></button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <button type="button" onclick="onmousereturn()">⬇</button></td>
+        </tr>
+           </form>
+       </table>
+        
+</body>
+</html>
+<script>
+    function onmousetop() {
+        console.log(parseInt(document.getElementById("tank").style["top"]) + 19 + "px");
+        document.getElementById("tank").style["top"] =  parseInt(document.getElementById("tank").style["top"]) - 19 + "px";
+        console.log(document.getElementById("tank").style["top"]);
+    }
+    function onmousereturn() {
+        document.getElementById("tank").style["top"] =  parseInt(document.getElementById("tank").style["top"]) + 19 + "px";
+    }   
+    function onmouseleft() {
+        document.getElementById("tank").style["left"] =  parseInt(document.getElementById("tank").style["left"]) - 19 + "px";
+    }
+    function onmouseright() {
+        document.getElementById("tank").style["left"] =  parseInt(document.getElementById("tank").style["left"]) + 19 + "px";
+    }
+</script>
